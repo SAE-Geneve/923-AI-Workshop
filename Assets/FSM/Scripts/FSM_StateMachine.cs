@@ -50,7 +50,7 @@ namespace FSM
                 // => Change State
                 ChangeState(possibleTransition._to);
             }
-            
+
         }
 
         public void AddTransition(FSM_IState from, FSM_IState to, Func<bool> condition)
