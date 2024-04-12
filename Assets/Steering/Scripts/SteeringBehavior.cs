@@ -9,10 +9,12 @@ public class SteeringBehavior : MonoBehaviour
 
     [SerializeField] private float _maxVelocity;
 
-    [Header("Seek")] [SerializeField] private Transform _seekTarget;
+    [Header("Seek")] 
+    [SerializeField] private Transform _seekTarget;
     [SerializeField] private float _seekWeight;
 
-    [Header("Evade")] [SerializeField] private Transform _evadeTarget;
+    [Header("Evade")] 
+    [SerializeField] private Transform _evadeTarget;
     [SerializeField] private float _evadeWeight;
     [SerializeField] private float _evadeDistance;
 
@@ -20,7 +22,7 @@ public class SteeringBehavior : MonoBehaviour
     [SerializeField] private float _wanderWeight = 1;
     [SerializeField] private float _wanderCircleDistance = 1;
     [SerializeField] private float _wanderCircleRadius = 2;
-    [SerializeField] private float _wanderSpeed;
+    [SerializeField] private float _wanderChange;
     
     private Rigidbody _rb;
     private Vector3 _acceleration;
@@ -42,11 +44,8 @@ public class SteeringBehavior : MonoBehaviour
         Vector3 velocity = _rb.velocity;
 
         _acceleration = Vector3.zero;
-        // _acceleration += _seekWeight * Seek(_seekTarget);
-        // if (Vector3.Distance(_evadeTarget.position, transform.position) <= _evadeDistance)
-        // {
-        //     _acceleration += _evadeWeight * Evade(_evadeTarget);
-        // }
+        _acceleration += _seekWeight * Seek(_seekTarget);
+        _acceleration += _evadeWeight * Evade(_evadeTarget);
         _acceleration += _wanderWeight * Wander();
 
         velocity += _acceleration * Time.deltaTime;
@@ -104,26 +103,36 @@ public class SteeringBehavior : MonoBehaviour
 
     private Vector3 Wander()
     {
-        Vector3 steeringForce = Vector3.zero;
+        
+        Vector3 steeringForce;;
 
         // Calculate the circle center
-        Vector3 circleCenter = transform.position + _rb.velocity.normalized * _wanderCircleDistance;
-
-        // Generate a random angle
-        _wanderAngle += Random.Range(-1f*_wanderSpeed, _wanderSpeed);
-
-        // Convert the angle to a vector on the circle
-        Vector3 wanderDirection = new Vector3(Mathf.Sin(_wanderAngle), 0, Mathf.Cos(_wanderAngle));
-
-        // Calculate the target position on the circle
-        Vector3 targetPosition = circleCenter + wanderDirection * _wanderCircleRadius;
-
-        // Calculate the steering force towards the target position
-        _wanderVelocity = targetPosition - transform.position;
+        Vector3 circleCenter = _wanderCircleDistance * _rb.velocity.normalized;
         
+        // Calculate the displacement force
+        Vector3 displacement = _wanderCircleRadius * Vector3.forward;
+        
+        //
+        // Randomly change the vector direction
+        // by making it change its current angle
+        displacement = Quaternion.AngleAxis(_wanderAngle, Vector3.up) * displacement;
+        
+        //
+        // Change wanderAngle just a bit, so it
+        // won't have the same value in the
+        // next game frame.
+        _wanderAngle += Random.Range(-1 * _wanderChange , _wanderChange);
+
+        //
+        // Finally calculate and return the wander force
+        Vector3 wanderTarget = circleCenter + displacement;
+        
+        _wanderVelocity = wanderTarget - transform.position;
         steeringForce = _wanderVelocity - _rb.velocity;
-        // Return the steering force (you may want to normalize it based on your requirements)
+
         return steeringForce;
+
+
     }
 
 

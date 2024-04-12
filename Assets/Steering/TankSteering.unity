@@ -415,9 +415,9 @@ MonoBehaviour:
   _evadeWeight: 0
   _evadeDistance: 20.8
   _wanderWeight: 1
-  _wanderCircleDistance: 0
+  _wanderCircleDistance: 5
   _wanderCircleRadius: 10
-  _wanderSpeed: 34
+  _wanderChange: 2
 --- !u!4 &693373806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5263a76370a7b435ca5044a8d04b2e4b, type: 3}

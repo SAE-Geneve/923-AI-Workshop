@@ -27,7 +27,8 @@ namespace BT_Tree_Workshop
 
                 if (_childIdx >= _children.Count)
                 {
-                    return BT_Status.Success;
+                    _childIdx = 0;
+                    return BT_Status.Failure;
                 }
                 else
                 {
