@@ -1546,7 +1546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_69
+      name: Red
       rect:
         serializedVersion: 2
         x: 144
@@ -1735,7 +1735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_78
+      name: truc
       rect:
         serializedVersion: 2
         x: 128
@@ -1756,7 +1756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_79
+      name: Blue
       rect:
         serializedVersion: 2
         x: 144
@@ -1861,27 +1861,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Chest
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b75e8669322a0054782ae5a98eae3984
-      internalID: 1754728199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dungeon_Tileset_85
       rect:
         serializedVersion: 2
@@ -1903,7 +1882,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_86
+      name: Coin
       rect:
         serializedVersion: 2
         x: 96
@@ -2259,6 +2238,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Dungeon_chest
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4bc1635519c7144992e81104af5785
+      internalID: 1833934542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2270,6 +2270,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Blue: -198146054
+      Coin: -2017323237
       Dungeon_Chest: 1754728199
       Dungeon_Door: -1215443760
       Dungeon_Tileset_100: -1045016841
@@ -2317,7 +2319,6 @@ TextureImporter:
       Dungeon_Tileset_66: -1850057342
       Dungeon_Tileset_67: -176405653
       Dungeon_Tileset_68: 1414999543
-      Dungeon_Tileset_69: -1915085009
       Dungeon_Tileset_7: -860022338
       Dungeon_Tileset_70: -2104462299
       Dungeon_Tileset_71: 692188785
@@ -2327,15 +2328,12 @@ TextureImporter:
       Dungeon_Tileset_75: -263264519
       Dungeon_Tileset_76: 1738848484
       Dungeon_Tileset_77: 122716340
-      Dungeon_Tileset_78: -706031810
-      Dungeon_Tileset_79: -198146054
       Dungeon_Tileset_8: 1163474856
       Dungeon_Tileset_80: -1766647856
       Dungeon_Tileset_81: 1045159510
       Dungeon_Tileset_82: -2122545195
       Dungeon_Tileset_83: 1091077109
       Dungeon_Tileset_85: 1493459938
-      Dungeon_Tileset_86: -2017323237
       Dungeon_Tileset_87: -1323486377
       Dungeon_Tileset_88: -317278209
       Dungeon_Tileset_89: -2046689945
@@ -2350,6 +2348,7 @@ TextureImporter:
       Dungeon_Tileset_97: -921085520
       Dungeon_Tileset_98: 631811514
       Dungeon_Tileset_99: -1761460846
+      Dungeon_chest: 1833934542
       Floor_1: 1673981429
       Floor_10: 1631453689
       Floor_11: -769190523
@@ -2362,6 +2361,7 @@ TextureImporter:
       Floor_7: -809975167
       Floor_8: 442257847
       Floor_9: -1486404382
+      Red: -1915085009
       Wall_Down: -1396515766
       Wall_Left_1: 677905994
       Wall_Right_1: 419400627
@@ -2373,6 +2373,7 @@ TextureImporter:
       Wall_down_left: 1648184871
       Wall_down_right: 83521998
       Wall_up_left: 1323917550
+      truc: -706031810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
